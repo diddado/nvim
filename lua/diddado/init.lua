@@ -1,0 +1,5 @@
+require("diddado.remap")
+require("diddado.harpoon")
+-- require("diddado.configs.lspconfig")
+require("diddado.go_mappings")
+require("diddado.rails_mappings")

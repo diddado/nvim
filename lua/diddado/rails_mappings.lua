@@ -1,0 +1,6 @@
+vim.keymap.set("n", "<leader>ra", function()
+  require("neotest").run.run(vim.fn.expand("%"))
+end)
+vim.keymap.set("n", "<leader>rt", function()
+  require("neotest").run.run()
+end)
