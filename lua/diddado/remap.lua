@@ -20,3 +20,4 @@ vim.keymap.set("n", "zk", "<C-V><C-W>W")
 --lvim.keys.normal_mode["zf"] = "<C-W>f"
 vim.keymap.set("n", "zf", "<C-W>f")
 vim.keymap.set("n", "<leader>D", "<cmd>Dashboard<cr>")
+vim.keymap.set("n", "<leader>R", "<cmd>Telescope oldfiles<cr>")
