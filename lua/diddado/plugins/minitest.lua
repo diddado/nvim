@@ -1,0 +1,49 @@
+return {
+  -- { "zidhuss/neotest-minitest" },
+  { "r3ap3r2004/neotest-minitest" },
+  -- {
+  --   "nvim-neotest/neotest",
+  --   lazy = true,
+  --   dependencies = {
+  --     "zidhuss/neotest-minitest",
+  --   },
+  --   config = function()
+  --     require("neotest").setup({
+  --       adapters = {
+  --         require("neotest-minitest")({
+  --           -- any additional configuration
+  --         }),
+  --       },
+  --       -- command = "cd rails && ./bin/bundle exec",
+  --       -- test_cmd = function()
+  --       --   return vim.tbl_flatten({
+  --       --     "cd rails && var/www/www.tukios.com/rails/bin/bundle",
+  --       --     "cd rails && var/www/www.tukios.com/rails/bin/exec",
+  --       --     "cd rails && var/www/www.tukios.com/rails/bin/rails",
+  --       --     "cd rails && var/www/www.tukios.com/rails/bin/test",
+  --       --   })
+  --       -- end,
+  --       test_cmd = function()
+  --         return vim.tbl_flatten({
+  --           "/var/www/www.tukios.com/rails/bin/bundle",
+  --           "/var/www/www.tukios.com/rails/bin/rails",
+  --         })
+  --       end,
+  --     })
+  --   end,
+  -- },
+  -- {
+  --   "zidhuss/neotest-minitest",
+  --   lazy = true,
+  --   -- dependencies = {
+  --   --   ...,
+  --   -- },
+  --   config = function()
+  --     require("neotest").setup({
+  --       adapters = {
+  --         require("neotest-minitest"),
+  --       },
+  --     })
+  --   end,
+  -- },
+}

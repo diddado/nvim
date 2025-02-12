@@ -1,6 +1,7 @@
 return {
   -- "ggandor/leap.nvim",
   "folke/flash.nvim",
+  enabled = false,
   -- keys = { "s", mode = { "n", "x", "o" }, "c1" },
   keys = {
     -- Stupid flash overrrides the default vim command of s for substitute - get core vim functionality back
