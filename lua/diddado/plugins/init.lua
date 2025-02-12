@@ -12,6 +12,6 @@ return {
   require("diddado.plugins.telescope-undo"),
   require("diddado.plugins.theme"),
   require("diddado.plugins.vim-coffee-script"),
-  require("diddado.plugins.vim-tmux-navigator"),
+  -- require("diddado.plugins.vim-tmux-navigator"),
   require("diddado.plugins.window-picker"),
 }

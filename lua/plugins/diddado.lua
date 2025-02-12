@@ -1,3 +1,3 @@
 return {
-  { import = "diddado.plugins" },
+  { import = "diddado.plugins.init" },
 }
