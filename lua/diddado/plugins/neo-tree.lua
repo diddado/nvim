@@ -48,6 +48,29 @@ return {
   -- end,
   -- opts = {
   --   sources = { "filesystem", "buffers", "git_status", "document_symbols" },
+  --   filesystem = {
+  --     follow_current_file = { enabled = true },
+  --     filtered_items = {
+  --       hide_gitignored = false, -- Set this to false to show gitignored files
+  --       visible = true, -- Optional: Ensures filtered items are still visible
+  --       hide_dotfiles = false, -- Optional: Show dotfiles (e.g., .gitignore itself)
+  --       hide_hidden = false, -- Optional: Show hidden files (Windows-specific)
+  --       hide_by_name = { ".git" },
+  --       always_show = { ".env", ".gitignore" }, -- Optional: Always show these files
+  --       never_show = { ".DS_Store" }, -- Optional: Never show these files
+  --     },
+  --   },
+  --   default_component_configs = {
+  --     indent = {
+  --       with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+  --       expander_collapsed = "",
+  --       expander_expanded = "",
+  --       expander_highlight = "NeoTreeExpander",
+  --     },
+  --   },
+  -- },
+  -- opts = {
+  --   sources = { "filesystem", "buffers", "git_status", "document_symbols" },
   --   open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
   --   filesystem = {
   --     bind_to_cwd = false,
@@ -82,25 +105,25 @@ return {
   --     },
   --   },
   -- },
-  -- config = function(_, opts)
-  --   local function on_move(data)
-  --     LazyVim.lsp.on_rename(data.source, data.destination)
-  --   end
-  --
-  --   local events = require("neo-tree.events")
-  --   opts.event_handlers = opts.event_handlers or {}
-  --   vim.list_extend(opts.event_handlers, {
-  --     { event = events.FILE_MOVED, handler = on_move },
-  --     { event = events.FILE_RENAMED, handler = on_move },
-  --   })
-  --   require("neo-tree").setup(opts)
-  --   vim.api.nvim_create_autocmd("TermClose", {
-  --     pattern = "*lazygit",
-  --     callback = function()
-  --       if package.loaded["neo-tree.sources.git_status"] then
-  --         require("neo-tree.sources.git_status").refresh()
-  --       end
-  --     end,
-  --   })
-  -- end,
+  config = function(_, opts)
+    local function on_move(data)
+      LazyVim.lsp.on_rename(data.source, data.destination)
+    end
+
+    local events = require("neo-tree.events")
+    opts.event_handlers = opts.event_handlers or {}
+    vim.list_extend(opts.event_handlers, {
+      { event = events.FILE_MOVED, handler = on_move },
+      { event = events.FILE_RENAMED, handler = on_move },
+    })
+    require("neo-tree").setup(opts)
+    vim.api.nvim_create_autocmd("TermClose", {
+      pattern = "*lazygit",
+      callback = function()
+        if package.loaded["neo-tree.sources.git_status"] then
+          require("neo-tree.sources.git_status").refresh()
+        end
+      end,
+    })
+  end,
 }
