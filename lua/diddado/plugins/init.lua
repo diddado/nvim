@@ -7,6 +7,7 @@ return {
   require("diddado.plugins.minitest"),
   require("diddado.plugins.neo-tree"),
   require("diddado.plugins.neotest"),
+  require("diddado.plugins.snacks"),
   require("diddado.plugins.tailwind"),
   require("diddado.plugins.telescope-file-browser"),
   require("diddado.plugins.telescope-undo"),
