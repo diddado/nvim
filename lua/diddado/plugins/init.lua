@@ -15,4 +15,6 @@ return {
   require("diddado.plugins.vim-coffee-script"),
   -- require("diddado.plugins.vim-tmux-navigator"),
   require("diddado.plugins.window-picker"),
+
+  -- require("diddado.plugins.disable-compiler-plugins"),
 }
